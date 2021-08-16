@@ -77,8 +77,6 @@ app.use((req, res, next) => {
 });
 
 
-
-
 // To make sure that the database is synchronized with the code: 
 db.sync().then(()=> {
 app.listen(port, () => {
