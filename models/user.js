@@ -27,21 +27,11 @@ const User = db.define('mytable', {
     autoIncrement: true,
     primaryKey: true
   }, 
-  email: {
-    type: DataTypes.STRING,
-  },
-  password: {
-    type: DataTypes.STRING,
-  },
-  email: {
-    type: DataTypes.STRING,
-  },
-  firstname: {
-    type: DataTypes.STRING,
-  },
-  lastname: {
-    type: DataTypes.STRING,
-  }}, { freezeTableName: true, })
+  email: DataTypes.STRING,
+  password: DataTypes.STRING,
+  firstname:DataTypes.STRING,
+  lastname:DataTypes.STRING,
+  }, { freezeTableName: true, })
 
 User.beforeCreate((user)=> {
   return bcrypt.hash(user.password, 10).then(hash => {
